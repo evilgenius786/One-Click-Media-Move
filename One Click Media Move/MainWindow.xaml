@@ -1,0 +1,45 @@
+﻿<Window x:Class="One_Click_Media_Move.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Height="{Binding SystemParameters.PrimaryScreenHeight}" 
+        Width="1000" 
+        MinWidth="1000"
+        Icon="icon.ico"
+        WindowState="Maximized"
+        Title="One Click Media Move">
+    <Grid>
+        <Grid Margin="0,0,0,70">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+            <MediaElement Visibility="Hidden" Name="video" Grid.Column="0" LoadedBehavior="Play"  UnloadedBehavior="Stop"/>
+            <Image Visibility="Visible" Name="image" Grid.Column="0" Source="example.jpg"></Image>
+            <Button Padding="10" Click="openFile" Visibility="Hidden" Name="button" Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Content="Open file..."></Button>
+            <WrapPanel Background="AntiqueWhite" Name="gridMain" Grid.Column="2">
+                    <WrapPanel.Resources>
+                        <Style TargetType="{x:Type Button}">
+                            <Setter Property="Margin" Value="10,10,0,0"/>
+                        </Style>
+                    </WrapPanel.Resources>
+                </WrapPanel>
+            </Grid>
+            <Grid Background="WhiteSmoke" VerticalAlignment="Bottom" Height="65" >
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+            <Button Grid.Column="0" Width="100" Margin="10" Height="30" Content="Origin Folder" HorizontalAlignment="Left" Click="setOrigin" />
+            <TextBlock TextWrapping="WrapWithOverflow" Name="origin" Text="C:/example/path/" Margin="115,0,0,0" VerticalAlignment="Center"/>
+            <TextBlock TextWrapping="WrapWithOverflow" Name="filename" Grid.Column="1" Text="example.jpg" Margin="10,0,0,0" FontSize="15" FontWeight="Bold" VerticalAlignment="Center"/>
+            <Button Grid.Column="2" Margin="10,18,0,17" Content="Load button collection" Height="30" HorizontalAlignment="Left" Width="144" Click="loadCollection" />
+            <Button Grid.Column="3" Margin="10" Content="Skip&gt;&gt;" Width="100" Height="30" HorizontalAlignment="Right" Click="skip"/>
+            <Button Grid.Column="3" Margin="10" Content="&lt;&lt;Undo" Width="100" Height="30" HorizontalAlignment="Left" Click="undo" />
+        </Grid>
+    </Grid>
+</Window>
