@@ -1,2 +1,3 @@
-# One-Click-Media-Move
-Helps organize media files.
+# One Click Media Move
+Helps organize media files. If you have multiple type of media in one folder that needs to be organized into multiple folders like having all events pictures in one main/parent foolder and you want to move all media into its saperate child folders for its repsective event then this software helps you load collection of folders (buttons) on right side and on left side the media from that main folder will be automatically shown to you one by one, you can either move that file to one of the folder from available list/collection or skip that file.
+![Alt text](https://github.com/evilgenius786/One-Click-Media-Move/blob/master/Screenshot_4.png?raw=true)
